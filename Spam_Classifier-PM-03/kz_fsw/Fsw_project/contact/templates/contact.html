@@ -1,0 +1,13 @@
+{% if messages %}
+	{% for message in messages %}
+		<div>
+			<strong>{{ message }}</strong>
+		</div>
+	{% endfor %}
+{% else %}
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Send</button>
+</form>
+{% endif %}
